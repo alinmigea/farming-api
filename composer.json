@@ -1,10 +1,10 @@
 {
-  "name": "alin.migea/phalcon-blog-api",
-  "description": "Phalcon Blog API",
+  "name": "alin.migea/farming-api",
+  "description": "Farming API",
   "authors": [
     {
       "name": "Alin Migea",
-      "email": "alin.migea@p4b.ro"
+      "email": "alinmigea@gmail.ro"
     }
   ],
   "require": {
