@@ -1,0 +1,25 @@
+{
+  "name": "alin.migea/phalcon-blog-api",
+  "description": "Phalcon Blog API",
+  "authors": [
+    {
+      "name": "Alin Migea",
+      "email": "alin.migea@p4b.ro"
+    }
+  ],
+  "require": {
+    "php": ">= 7.4",
+    "ext-phalcon": "^4.0",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "vlucas/phpdotenv": "^5.2",
+    "nesbot/carbon": "^2.40"
+  },
+  "require-dev": {
+    "phalcon/ide-stubs": "~4.0"
+  },
+  "scripts": {
+    "web": "@php -S localhost:8000",
+    "migrations": "@php ./app/migrations/migration.php"
+  }
+}
