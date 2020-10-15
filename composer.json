@@ -4,7 +4,7 @@
   "authors": [
     {
       "name": "Alin Migea",
-      "email": "alinmigea@gmail.ro"
+      "email": "alinmigea@gmail.com"
     }
   ],
   "require": {
@@ -19,7 +19,7 @@
     "phalcon/ide-stubs": "~4.0"
   },
   "scripts": {
-    "web": "@php -S localhost:8000",
+    "web": "@php -S localhost:8001",
     "migrations": "@php ./app/migrations/migration.php"
   }
 }

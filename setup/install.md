@@ -3,7 +3,7 @@
 
 # Step 1
 
-You'll need to have XAMPP (Apache, PHP and MySQL) installed. Add PHP full path to your Path environment variable.
+Install PHP and MySQL for Ubuntu. Verify your PHP version. Check and verify your MySQL version.
 Install Composer globally. Install and configure Git. Download and install Postman.
 
 # Step 2
@@ -29,7 +29,7 @@ A new composer script has been added for running the built-in webserver.
 
 ```
 "scripts": {
- "web": "@php -S localhost:88"
+ "web": "@php -S localhost:8001"
 }
 ```
 

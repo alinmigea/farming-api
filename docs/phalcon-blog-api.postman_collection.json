@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "5ac6a03f-f6cc-47aa-bee6-9642fff831bb",
+		"name": "Phalcon Blog API",
+		"description": "Phalcon Blog API project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "what-is",
+			"item": [
+				{
+					"name": "what-is",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/what-is",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"what-is"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "le10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/articles/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"article20\",\r\n    \"description\": \"article20 desc\",\r\n    \"author_id\": 1,\r\n    \"categories\": [\r\n        2,\r\n        8\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"article20 again\",\r\n    \"description\": \"article20 desc modified again\",\r\n    \"author_id\": 4,\r\n    \"categories\": [\r\n        8\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/articles/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/articles/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/{id}/categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/articles/20/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"articles",
+								"20",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "at1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"cat8\",\r\n    \"description\": \"cat8 desc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"cat9\",\r\n    \"description\": \"cat9 desc - newly modified, again and again\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/categories/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}/articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories/1/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"1",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}/articles/{articleId}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories/1/articles/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"1",
+								"articles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id}/articles/{articleId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/categories/1/articles/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"categories",
+								"1",
+								"articles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"authors"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "st 1 test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "test 15",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "test 15",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test15@test.com",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/alin.migea/Pictures/Saved Pictures/800x600.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "test 16 modified again and again",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "test 16 modified again and again",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test16@test.com",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/alin.migea/Pictures/Saved Pictures/800x600.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/api/authors/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"authors",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/api/authors/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"api",
+								"authors",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
