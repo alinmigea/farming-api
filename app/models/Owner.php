@@ -6,44 +6,39 @@ use App\Exception\NotFoundException;
 use Exception;
 use Phalcon\Mvc\Model;
 
-class Author extends Model
+class Owner extends Model
 {
-    /**
-     * @return void
-     */
     public function initialize(): void
     {
         // ignore unknown columns
         Model::setup(['ignoreUnknownColumns' => true]);
 
         // define the table
-        $this->setSource('authors');
+        $this->setSource('owners');
 
         // define the relationships
         $this->hasMany(
             'id',
-            Article::class,
-            'author_id',
+            Animal::class,
+            'owner_id',
             [
-                'alias' => 'articles'
+                'alias' => 'animals',
             ]
         );
     }
 
     /**
-     * @param int $id
-     * @return Author
      * @throws Exception
      */
-    public static function findFirstById(int $id): Author
+    public static function findFirstById(int $id): Owner
     {
-        /** @var Author $article */
-        $author = parent::findFirst($id);
+        /** @var Owner $article */
+        $owner = parent::findFirst($id);
 
-        if (!($author instanceof Author)) {
-            throw new NotFoundException('Author with id \'' . $id . '\' was not found.');
+        if (!($owner instanceof Owner)) {
+            throw new NotFoundException('Owner with id \''.$id.'\' was not found.');
         }
 
-        return $author;
+        return $owner;
     }
 }

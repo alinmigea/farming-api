@@ -21,8 +21,6 @@ class CategoryController extends Controller
 
     /**
      * Set the helpers on construct.
-     *
-     * @return void
      */
     public function onConstruct(): void
     {
@@ -33,8 +31,6 @@ class CategoryController extends Controller
 
     /**
      * Get all categories.
-     *
-     * @return ResponseInterface
      */
     public function list(): ResponseInterface
     {
@@ -46,9 +42,6 @@ class CategoryController extends Controller
 
     /**
      * Get a category by id.
-     *
-     * @param int $id
-     * @return ResponseInterface
      */
     public function view(int $id): ResponseInterface
     {
@@ -66,8 +59,6 @@ class CategoryController extends Controller
 
     /**
      * Save a new category.
-     *
-     * @return ResponseInterface
      */
     public function add(): ResponseInterface
     {
@@ -84,9 +75,6 @@ class CategoryController extends Controller
 
     /**
      * Edit an existing category.
-     *
-     * @param int $id
-     * @return ResponseInterface
      */
     public function edit(int $id): ResponseInterface
     {
@@ -110,9 +98,6 @@ class CategoryController extends Controller
 
     /**
      * Delete a category.
-     *
-     * @param int $id
-     * @return ResponseInterface
      */
     public function delete(int $id): ResponseInterface
     {
@@ -129,16 +114,13 @@ class CategoryController extends Controller
     }
 
     /**
-     * Get all articles for a category.
-     *
-     * @param int $id
-     * @return ResponseInterface
+     * Get all animals for a category.
      */
-    public function articles(int $id): ResponseInterface
+    public function animals(int $id): ResponseInterface
     {
         try {
             /** @var Resultset $list */
-            $list = $this->service->listArticles($id);
+            $list = $this->service->listAnimals($id);
         } catch (Exception $exception) {
             return $this->responseHelper->send(
                 $exception->getMessage(),
@@ -150,16 +132,12 @@ class CategoryController extends Controller
     }
 
     /**
-     * Add an article to a category.
-     *
-     * @param int $id
-     * @param int $articleId
-     * @return ResponseInterface
+     * Add an animal to a category.
      */
-    public function addArticle(int $id, int $articleId): ResponseInterface
+    public function addAnimal(int $id, int $animalId): ResponseInterface
     {
         try {
-            $this->service->addArticle($id, $articleId);
+            $this->service->addAnimal($id, $animalId);
         } catch (Exception $exception) {
             return $this->responseHelper->send(
                 $exception->getMessage(),
@@ -171,16 +149,12 @@ class CategoryController extends Controller
     }
 
     /**
-     * Delete an article from a category.
-     *
-     * @param int $id
-     * @param int $articleId
-     * @return ResponseInterface
+     * Delete an animal from a category.
      */
-    public function deleteArticle(int $id, int $articleId): ResponseInterface
+    public function deleteAnimal(int $id, int $animalId): ResponseInterface
     {
         try {
-            $this->service->deleteArticle($id, $articleId);
+            $this->service->deleteAnimal($id, $animalId);
         } catch (Exception $exception) {
             return $this->responseHelper->send(
                 $exception->getMessage(),

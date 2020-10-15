@@ -2,52 +2,48 @@
 
 namespace App\Provider;
 
-use App\Controller\ArticleController;
-use App\Controller\AuthorController;
+use App\Controller\AnimalController;
 use App\Controller\CategoryController;
+use App\Controller\OwnerController;
 use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\Collection;
 
 class RouteProvider
 {
-    /**
-     * @param Micro $app
-     * @return void
-     */
     public function register(Micro $app): void
     {
         // api name route
         $app->get(
             '/api/what-is',
             function () {
-                echo "My Phalcon Blog API";
+                echo 'Farming API';
             }
         );
 
-        // routes for Article
-        $articleRoutes = new Collection();
-        $articleRoutes
-            ->setHandler(new ArticleController())
-            ->setPrefix('/api/articles')
+        // routes for Animal
+        $animalRoutes = new Collection();
+        $animalRoutes
+            ->setHandler(new AnimalController())
+            ->setPrefix('/api/animals')
             ->get('/', 'list')
             ->get('/{id:[0-9]+}', 'view')
             ->post('', 'add')
             ->put('/{id:[0-9]+}', 'edit')
             ->delete('/{id:[0-9]+}', 'delete')
             ->get('/{id:[0-9]+}/categories', 'categories');
-        $app->mount($articleRoutes);
+        $app->mount($animalRoutes);
 
-        // routes for Author
-        $authorRoutes = new Collection();
-        $authorRoutes
-            ->setHandler(new AuthorController())
-            ->setPrefix('/api/authors')
+        // routes for Owner
+        $ownerRoutes = new Collection();
+        $ownerRoutes
+            ->setHandler(new OwnerController())
+            ->setPrefix('/api/owners')
             ->get('/', 'list')
             ->get('/{id:[0-9]+}', 'view')
             ->post('', 'add')
             ->post('/{id:[0-9]+}', 'edit')
             ->delete('/{id:[0-9]+}', 'delete');
-        $app->mount($authorRoutes);
+        $app->mount($ownerRoutes);
 
         // routes for Category
         $categoryRoutes = new Collection();
@@ -59,9 +55,9 @@ class RouteProvider
             ->post('', 'add')
             ->put('/{id:[0-9]+}', 'edit')
             ->delete('/{id:[0-9]+}', 'delete')
-            ->get('/{id:[0-9]+}/articles', 'articles')
-            ->put('/{id:[0-9]+}/articles/{articleId:[0-9]+}', 'addArticle')
-            ->delete('/{id:[0-9]+}/articles/{articleId:[0-9]+}', 'deleteArticle');
+            ->get('/{id:[0-9]+}/animals', 'animals')
+            ->put('/{id:[0-9]+}/animals/{animalId:[0-9]+}', 'addAnimal')
+            ->delete('/{id:[0-9]+}/animals/{animalId:[0-9]+}', 'deleteAnimal');
         $app->mount($categoryRoutes);
 
         // other routes

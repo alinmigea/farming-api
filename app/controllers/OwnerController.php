@@ -4,19 +4,19 @@ namespace App\Controller;
 
 use App\Exception\BaseException;
 use App\Helper\ResponseHelper;
-use App\Service\AuthorService;
-use App\Validation\AuthorValidation;
+use App\Service\OwnerService;
 use App\Validation\ImageValidation;
+use App\Validation\OwnerValidation;
 use Exception;
 use Phalcon\Http\ResponseInterface;
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\Model\Resultset;
 
-class AuthorController extends Controller
+class OwnerController extends Controller
 {
-    private AuthorService $service;
+    private OwnerService $service;
 
-    private AuthorValidation $validation;
+    private OwnerValidation $validation;
 
     private ImageValidation $imageValidation;
 
@@ -24,21 +24,17 @@ class AuthorController extends Controller
 
     /**
      * Set the helpers on construct.
-     *
-     * @return void
      */
     public function onConstruct(): void
     {
-        $this->service = $this->getDI()->getShared(AuthorService::class);
-        $this->validation = $this->getDI()->getShared(AuthorValidation::class);
+        $this->service = $this->getDI()->getShared(OwnerService::class);
+        $this->validation = $this->getDI()->getShared(OwnerValidation::class);
         $this->imageValidation = $this->getDI()->getShared(ImageValidation::class);
         $this->responseHelper = $this->getDI()->getShared(ResponseHelper::class);
     }
 
     /**
-     * Get all authors.
-     *
-     * @return ResponseInterface
+     * Get all owners.
      */
     public function list(): ResponseInterface
     {
@@ -49,15 +45,12 @@ class AuthorController extends Controller
     }
 
     /**
-     * Get an author by id.
-     *
-     * @param int $id
-     * @return ResponseInterface
+     * Get an owner by id.
      */
     public function view(int $id): ResponseInterface
     {
         try {
-            $author = $this->service->view($id);
+            $owner = $this->service->view($id);
         } catch (Exception $exception) {
             return $this->responseHelper->send(
                 $exception->getMessage(),
@@ -65,13 +58,11 @@ class AuthorController extends Controller
             );
         }
 
-        return $this->responseHelper->send($author);
+        return $this->responseHelper->send($owner);
     }
 
     /**
-     * Save a new author.
-     *
-     * @return ResponseInterface
+     * Save a new owner.
      */
     public function add(): ResponseInterface
     {
@@ -87,16 +78,13 @@ class AuthorController extends Controller
             return $this->responseHelper->send($messages, 400);
         }
 
-        $author = $this->service->add($this->request->getPost());
+        $owner = $this->service->add($this->request->getPost());
 
-        return $this->responseHelper->send($author, 201);
+        return $this->responseHelper->send($owner, 201);
     }
 
     /**
-     * Edit an existing author.
-     *
-     * @param int $id
-     * @return ResponseInterface
+     * Edit an existing owner.
      */
     public function edit(int $id): ResponseInterface
     {
@@ -114,7 +102,7 @@ class AuthorController extends Controller
         }
 
         try {
-            $author = $this->service->edit($id, $this->request->getPost());
+            $owner = $this->service->edit($id, $this->request->getPost());
         } catch (Exception $exception) {
             return $this->responseHelper->send(
                 $exception->getMessage(),
@@ -122,14 +110,11 @@ class AuthorController extends Controller
             );
         }
 
-        return $this->responseHelper->send($author);
+        return $this->responseHelper->send($owner);
     }
 
     /**
-     * Delete an author.
-     *
-     * @param int $id
-     * @return ResponseInterface
+     * Delete an owner.
      */
     public function delete(int $id): ResponseInterface
     {
