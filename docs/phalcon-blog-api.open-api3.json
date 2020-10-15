@@ -1,0 +1,622 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Phalcon Blog API",
+    "description": "Phalcon Blog API project",
+    "contact": {
+      "name": "Alin Migea",
+      "email": "alin.migea@p4b.ro"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:88/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/what-is": {
+      "get": {
+        "tags": [
+          "what-is"
+        ],
+        "summary": "what-is",
+        "operationId": "what-is",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/articles": {
+      "get": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles",
+        "operationId": "articles",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "post": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles",
+        "operationId": "Postarticles",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/articlesrequest"
+              },
+              "example": {
+                "title": "article20",
+                "description": "article20 desc",
+                "author_id": 1,
+                "categories": [
+                  2,
+                  8
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/articles/20": {
+      "get": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles/{id}",
+        "operationId": "articles/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "put": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles/{id}",
+        "operationId": "Putarticles/{id}",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/articles~1%7Bid%7Drequest"
+              },
+              "example": {
+                "title": "article20 again",
+                "description": "article20 desc modified again",
+                "author_id": 4,
+                "categories": [
+                  8
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/articles/19": {
+      "delete": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles/{id}",
+        "operationId": "Deletearticles/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/articles/20/categories": {
+      "get": {
+        "tags": [
+          "articles"
+        ],
+        "summary": "articles/{id}/categories",
+        "operationId": "articles/{id}/categories",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories",
+        "operationId": "categories",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories",
+        "operationId": "Postcategories",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/categoriesrequest"
+              },
+              "example": {
+                "title": "cat8",
+                "description": "cat8 desc"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/categories/1": {
+      "get": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}",
+        "operationId": "categories/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/categories/9": {
+      "put": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}",
+        "operationId": "Putcategories/{id}",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/categories~1%7Bid%7Drequest"
+              },
+              "example": {
+                "title": "cat9",
+                "description": "cat9 desc - newly modified, again and again"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}",
+        "operationId": "Deletecategories/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/categories/1/articles": {
+      "get": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}/articles",
+        "operationId": "categories/{id}/articles",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/categories/1/articles/4": {
+      "put": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}/articles/{articleId}",
+        "operationId": "categories/{id}/articles/{articleId}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "categories/{id}/articles/{articleId}",
+        "operationId": "Deletecategories/{id}/articles/{articleId}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/authors": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "authors",
+        "operationId": "authors",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "authors",
+        "operationId": "Postauthors",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "email",
+                  "image"
+                ],
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "example": "test 15"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "example": "test 15"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "test15@test.com"
+                  },
+                  "image": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/authors/1": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "authors/{id}",
+        "operationId": "authors/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/authors/16": {
+      "post": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "authors/{id}",
+        "operationId": "Postauthors/{id}",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "email",
+                  "image"
+                ],
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "example": "test 16 modified again and again"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "example": "test 16 modified again and again"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "test16@test.com"
+                  },
+                  "image": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "delete": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "authors/{id}",
+        "operationId": "Deleteauthors/{id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "articlesrequest": {
+        "title": "articlesrequest",
+        "required": [
+          "title",
+          "description",
+          "author_id",
+          "categories"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "author_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "example": {
+          "title": "article20",
+          "description": "article20 desc",
+          "author_id": 1,
+          "categories": [
+            2,
+            8
+          ]
+        }
+      },
+      "articles/{id}request": {
+        "title": "articles/{id}request",
+        "required": [
+          "title",
+          "description",
+          "author_id",
+          "categories"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "author_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "example": {
+          "title": "article20 again",
+          "description": "article20 desc modified again",
+          "author_id": 4,
+          "categories": [
+            8
+          ]
+        }
+      },
+      "categoriesrequest": {
+        "title": "categoriesrequest",
+        "required": [
+          "title",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "cat8",
+          "description": "cat8 desc"
+        }
+      },
+      "categories/{id}request": {
+        "title": "categories/{id}request",
+        "required": [
+          "title",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "cat9",
+          "description": "cat9 desc - newly modified, again and again"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "what-is"
+    },
+    {
+      "name": "articles"
+    },
+    {
+      "name": "categories"
+    },
+    {
+      "name": "authors"
+    }
+  ]
+}
